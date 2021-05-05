@@ -5,9 +5,13 @@ learn [AWS Systems Manager Automation](https://docs.aws.amazon.com/systems-manag
 **SSM Automation document**
 
 * contains one or more steps that run in sequential order
+* can specify parameters
 * Each step is built around a single action
 * Output from one step can be used as input in a later step
 * json or yaml documents
+* can run python or powershell scripts via [`aws:executeScript`](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html)
+* invoke [`aws:invokeLambdaFunction`](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html)
+* can specify execution role via `AutomationAssumeRole` parameter.  if not specified, uses the security context of calling principal
 
 ## Resources
 
