@@ -12,6 +12,28 @@ learn [AWS Systems Manager Automation](https://docs.aws.amazon.com/systems-manag
 * can run python or powershell scripts via [`aws:executeScript`](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeScript.html)
 * invoke [`aws:invokeLambdaFunction`](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-lamb.html)
 * can specify execution role via `AutomationAssumeRole` parameter.  if not specified, uses the security context of calling principal
+* can [trigger based on EventBridge rule](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-cwe-target.html)
+* can reference parameters in Parameter Store within an SSM doc via `{{ssm:parameter-name}}`
+
+---
+
+## Examples
+
+```sh
+# create an ssm document
+aws ssm create-document \
+    --content file://path/to/file/documentContent.json \
+    --name "document-name" \
+    --document-type "Command" \
+    --tags "Key=tag-key,Value=tag-value"
+
+# run an ssm document
+aws ssm start-automation-execution \
+--document-name "AWS-UpdateLinuxAmi" \
+--parameters "AutomationAssumeRole=arn:aws:iam::123456789012:role/SSMAutomationRole,SourceAmiId=ami-EXAMPLE,IamInstanceProfileName=EC2InstanceRole"
+```
+
+---
 
 ## Resources
 
