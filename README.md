@@ -64,3 +64,4 @@ aws ssm send-command \
     * [aws:executeAwsApi – Call and run AWS API actions](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-executeAwsApi.html)
 * [Walkthrough: Using Automation with Jenkins](https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-jenkins.html)
 * [ceshihao/ssm-public-documents](https://github.com/ceshihao/ssm-public-documents) - example ssm automation documents
+* [How To Create AWS SSM Automation Workflow | CloudAffaire](https://cloudaffaire.com/how-to-create-aws-ssm-automation-workflow/) - goo walkthrough how to create automation doc and run via aws cli
