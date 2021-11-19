@@ -17,7 +17,7 @@ learn [AWS Systems Manager Automation](https://docs.aws.amazon.com/systems-manag
 * ssm document types (yaml or json)
   * automation (renamed to runbooks) -
   * command - remotely and securely manage the configuration of your managed instances (ec2 or on-prem)
-
+* `aws:executeScript` stdout/stderr can be sent to CloudWatch logs.  see <https://docs.aws.amazon.com/systems-manager/latest/userguide/automation-action-logging.html>
 
 ---
 
